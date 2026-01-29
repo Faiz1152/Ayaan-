@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Good Boy Site</title>
+
+  <style>
+    /* Full screen rainbow background */
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(
+        270deg,
+        red, orange, yellow, green, cyan, blue, violet
+      );
+      background-size: 1400% 1400%;
+      animation: rainbow 10s ease infinite;
+      font-family: Arial, sans-serif;
+    }
+
+    @keyframes rainbow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Yellow button */
+    button {
+      background-color: yellow;
+      border: none;
+      padding: 20px 30px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 12px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body>
+  <button onclick="speakText()">Click Me</button>
+
+  <script>
+    function speakText() {
+      const text = "We should be a good boy. We should not tap and stomp. We should not laugh unnecessarily. We should not pee in our pants. We should not copy bhai.";
+
+      const speech = new SpeechSynthesisUtterance(text);
+      speech.rate = 1;
+      speech.pitch = 1;
+
+      window.speechSynthesis.speak(speech);
+    }
+  </script>
+</body>
+</html>
