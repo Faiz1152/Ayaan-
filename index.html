@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rainbow Star</title>
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet);
+            background-size: 400% 400%;
+            animation: rainbowMove 10s ease infinite;
+        }
+
+        @keyframes rainbowMove {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+
+        #star {
+            font-size: 120px;
+            display: none;
+            margin-top: 30px;
+            color: gold;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 22px;
+            background-color: yellow;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+        }
+
+        .dimmed {
+            /* reduce gradient intensity by 50% */
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <button id="starButton" onclick="showStar()">Click Me</button>
+    <div id="star">★</div>
+
+    <script>
+        function showStar() {
+            // Show the star
+            document.getElementById('star').style.display = 'block';
+            // Reduce background intensity
+            document.body.classList.add('dimmed');
+            // Remove the button
+            const btn = document.getElementById('starButton');
+            btn.remove();
+        }
+    </script>
+</body>
+</html>
