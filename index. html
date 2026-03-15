@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Photo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        img {
+            display: none;
+            margin-top: 20px;
+            max-width: 80%;
+            height: auto;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="showButton">Show Photo</button>
+    <br>
+    <img id="photo" src="a.jpg" alt="Photo">
+
+    <script>
+        const button = document.getElementById('showButton');
+        const photo = document.getElementById('photo');
+
+        button.addEventListener('click', () => {
+            photo.style.display = 'block';
+        });
+    </script>
+
+</body>
+</html>
