@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Rainbow Video</title>
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+    font-family: Arial;
+}
+
+button{
+    background: yellow;
+    border: none;
+    padding: 15px 30px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+video{
+    margin-top:20px;
+    max-width:80%;
+    display:none;
+}
+</style>
+</head>
+
+<body>
+
+<button onclick="playVideo()">Click Me</button>
+
+<video id="vid" controls>
+    <source src="a.mp4" type="video/mp4">
+</video>
+
+<script>
+function playVideo(){
+    const v = document.getElementById("vid");
+    v.style.display = "block";
+    v.play();
+}
+</script>
+
+</body>
+</html>
