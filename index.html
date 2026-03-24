@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AYAAN</title>
+
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin-top: 50px;
+        }
+
+        /* Rainbow text */
+        .rainbow {
+            font-size: 40px;
+            font-weight: bold;
+            background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Yellow button */
+        button {
+            background-color: yellow;
+            color: black;
+            font-size: 18px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+
+        button:hover {
+            background-color: gold;
+        }
+
+        #image {
+            display: none;
+            margin-top: 20px;
+            max-width: 300px;
+        }
+    </style>
+</head>
+<body>
+
+<h1 class="rainbow">AYAAN</h1>
+
+<button onclick="playAndShow()">Click Me</button>
+
+<br>
+<img id="image" src="a.jpg" alt="Image">
+
+<audio id="audio" src="goodboy.mp3"></audio>
+
+<script>
+function playAndShow() {
+    document.getElementById("audio").play();
+    document.getElementById("image").style.display = "block";
+}
+</script>
+
+</body>
+</html>
